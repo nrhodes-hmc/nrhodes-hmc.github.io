@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML</title>
+</head>
+<body>
+
+<H1>Answers to questions</H1>
+<h1>HTML</h1>
+<ol start="2">
+    <li> 
+        <ol type="a">
+            <li>URL is <kbd>file://Users/nrhodes/cs124/foo.html</kbd>
+            <li><kbd>file</kbd> (rather than typical <kbd>http</kbd> or <kbd>https</kbd>)
+         </ol>
+    <li>  <ol type="a">
+           <li>Title appears in the tab bar
+           <li>h1 header appears in the web page itself.
+           </ol>
+</ol>
+
+<h2>Forms and HTTP</h2>
+<ol start="3">
+    <li>  
+        <ol type="a">
+            <li><kbd>https://www.cs.hmc.edu/~rhodes/cgi-bin/query.py?color=green&direction=north</kbd>
+            <li>  They get appended on to the URL as <kbd><i>name</i>=<i>value</i> separated by ampersands.
+            <li> There's a program on the knuth web server named <kbd>query.py</kbd> in the ~rhodes/cgi-bin directory that gets passed the query parameters and then returns an HTML page.
+         </ol>
+    <li> 
+        <ol type="a">
+            <li><kbd>https://www.cs.hmc.edu/~rhodes/cgi-bin/query.py</kbd>
+            <li>If you click on <kbd>query.py</kbd> in the Network pane, and then click on the Payload pane you'll see that the data <kbd>name=n&age=1&color=green&direction=north</kbd> is sent as the payload of the request.
+       </ol>
+
+    <li>
+        <ol type="a">
+            <li>In all three browsers, you can bring up a calendar to select a date (In Chrome, click on the calendar icon, in the other two browsers, click on any field).
+                <li>According to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date"><kbd>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date</kbd></a>, the the control degrades gracefully to <kbd>&lt;input type="text"&gt;</kbd>.
+       </ol>
+    <li>
+        <ol type="a">
+            <li>The <kbd>for</kbd>attribute specifies the id of the element to which this label is associated.
+            <li>Because it resembles an old-fashioned car radio where pressing in one button turned off all the others.
+            <li>
+       </ol>
+</ol>
+
+
+<h1> The desired form</h1>
+
+<form action="https://www.cs.hmc.edu/~rhodes/cgi-bin/query.py" method="POST">
+    <label for="thename">Name:</label>
+    <input id="thename" name="name" type="input"/>
+    <br/>
+    <label for="theage">Age:</label>
+    <input id="theage" name="age" type="input"/>
+    <br/>
+    <label for="thedob">Date of birth:</label>
+    <input id="thedob" name="dob" type="date"/>
+
+    <p><b>Colors:</b>
+    <input type="radio" id="color-red" name="color" value="red">
+    <label for="color-red">Red</label>
+    <input type="radio" id="color-green" name="color" value="green" checked>
+    <label for="color-green">Green</label>
+    <input type="radio" id="color-blue" name="color" value="blue">
+    <label for="color-blue">Blue</label>
+
+    <p><b>Compass Directions:</b>
+    <input type="radio" id="direction-west" name="direction" value="west">
+    <label for="color-west">West</label>
+    <input type="radio" id="direction-east" name="direction" value="east">
+    <label for="color-east">East</label>
+    <input type="radio" id="direction-north" name="direction" value="north" checked>
+    <label for="color-north">North</label>
+    <input type="radio" id="direction-south" name="direction" value="south">
+    <label for="color-south">South</label>
+
+
+    <br>
+    <button type="submit">Submit</button>
+    <!-- or
+    <input type="submit">Submit</input>
+    -->
+
+</form>
+
+</body>
+</html>
